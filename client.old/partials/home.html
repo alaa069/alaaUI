@@ -1,0 +1,6 @@
+<div ng-repeat='post in posts' ng-hide='loading'>
+    <h1>{{post.name}}</h1>
+    <p>{{post.content}}</p>
+    <p><a href="#!/comments/{{post.id}}">{{post.comments.length}} comment</a></p>
+    <hr>
+</div>

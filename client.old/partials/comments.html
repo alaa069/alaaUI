@@ -1,0 +1,17 @@
+<div ng-hide='loading'>
+    <p><a href="#!/">Back</a></p>
+    <h1>{{title}}</h1>
+    <div ng-repeat="comment in comments | filter: {content: query} | orderBy:order">
+        <p>
+            <strong>{{comment.username}}</strong>
+            {{comment.content}}
+        </p>
+    </div>
+    <form ng-submit="addCommment()">
+        <input type="text" placeholder="username" ng-model="newComment.username"><br>
+        <input type="text" placeholder="city" ng-model="newComment.city"><br>
+        <input type="text" placeholder="email" ng-model="newComment.email"><br>
+        <textarea ng-model="newComment.content" id="" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Send">
+    </form>
+</div>
