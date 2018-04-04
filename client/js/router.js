@@ -1,5 +1,3 @@
-var myApp = angular.module('myApp', ['ngRoute', 'jsonFormatter', 'ng-route-active']);
-
 myApp.config(function($routeProvider){
     $routeProvider
         .when('/Dashboard',{

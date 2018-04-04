@@ -1,0 +1,39 @@
+
+    <div class="card card-user" ng-controller="tryChatCtrl">
+        <form>
+            <div class="callout m-0 py-2 text-muted text-center bg-faded text-uppercase">
+                <small>
+                    <b>Input</b>
+                </small>
+            </div>
+            <div class="py-3 chat-margin">
+                <div class="form-group">
+                    <select class="form-control" ng-model="chatModel">
+                        <option ng-repeat="model in available_models track by model.folder | orderBy: datetime : true" value="{{model.name}}">{{ model.name }}</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="text" value="" class="form-control" placeholder="Try it..." ng-model="chatText" ng-keyup="$event.keyCode == 13 ? executeChatRequest() : null">
+                    <span class="input-group-addon btn-go" ng-click="executeChatRequest()">
+                        <i class="now-ui-icons media-1_button-play"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="callout m-0 py-2 text-muted text-center bg-faded text-uppercase" ng-hide="exportdataRes === undefined">
+                <small>
+                    <b>Output</b>
+                </small>
+            </div>
+            <div class="py-3 chat-margin" ng-hide="exportdataRes === undefined">
+                <h3>Hello</h3>
+            </div>
+            <div class="callout m-0 py-2 text-muted text-center bg-faded text-uppercase" ng-hide="exportdata === undefined">
+                <small>
+                    <b>JSON Data</b>
+                </small>
+            </div>
+            <div class="py-3 chat-margin" id="elem" ng-hide="exportdata === undefined">
+                <json-formatter open="13" json="exportdata"></json-formatter>
+            </div>
+        </form>
+    </div>

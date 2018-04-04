@@ -1,9 +1,10 @@
-myApp.controller('agentCtrl', function($scope, $route, NLU){
-    /*$scope.available_models = [];
+myApp.controller('tryChatCtrl', function($scope, $route, NLU){
+    $scope.available_models = [];
     $scope.chatText = '';
     $scope.chatModel = '';
 
     NLU.status().then(function(models){
+        console.lo
         $scope.available_models = models
     }, function(msg){
         console.log(msg)
@@ -18,6 +19,6 @@ myApp.controller('agentCtrl', function($scope, $route, NLU){
                 console.log(msg)
             })
         }
-    }*/
+    }
 
 })
