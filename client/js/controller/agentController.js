@@ -1,23 +1,13 @@
-myApp.controller('agentCtrl', function($scope, $route, NLU){
-    /*$scope.available_models = [];
-    $scope.chatText = '';
-    $scope.chatModel = '';
+myApp.controller('agentCtrl', function($scope, Agent){
+    Agent.get(function(data) {
+        if(data.error){
 
-    NLU.status().then(function(models){
-        $scope.available_models = models
-    }, function(msg){
-        console.log(msg)
-    })
+        } else {
+            if(data.result == "Empty"){
 
-    $scope.executeChatRequest = function(){
-        if(($scope.chatText != '')&&($scope.chatModel != '')){
-            NLU.parse($scope.chatText, $scope.chatModel).then(function(data){
-                $scope.chatText = '';
-                $scope.exportdata = data.data;
-            }, function(msg){
-                console.log(msg)
-            })
+            } else {
+                $scope.agentList = data.result.List;
+            }
         }
-    }*/
-
+    });
 })

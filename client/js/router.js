@@ -9,6 +9,21 @@ myApp.config(function($routeProvider){
             controller: 'agentCtrl',
             activetab: 'agent'
         })
+        .when('/addAgent',{
+            templateUrl: 'template/addAgent.html',
+            controller: 'addAgentCtrl',
+            activetab: 'agent'
+        })
+        .when('/Agent/:id',{
+            templateUrl: 'template/Intents.html',
+            controller: 'intentCtrl',
+            activetab: 'agent'
+        })
+        .when('/Agent/:id/addIntent',{
+            templateUrl: 'template/addIntent.html',
+            controller: 'addIntentCtrl',
+            activetab: 'agent'
+        })
         .when('/Entities',{
             templateUrl: 'template/Entities.html',
             activetab: 'entities'

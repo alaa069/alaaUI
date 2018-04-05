@@ -6,22 +6,17 @@
                     <h5 class="title">Agent</h5>
                 </div>
                 <div>
-                    <button class="btn btn-default btn-round">
+                    <a class="btn btn-default btn-round" href="#!/addAgent">
                         <i class="now-ui-icons ui-1_simple-add"></i>&nbsp&nbsp Add Agent
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-12">
-                        <a href="#">
+                    <div class="col-md-12" ng-repeat="agent in agentList">
+                        <a href="#!/Agent/{{agent._id}}">
                             <blockquote class="blockquote">
-                                <p class="mb-0">Weather</p>
-                            </blockquote>
-                        </a>
-                        <a href="#">
-                            <blockquote class="blockquote">
-                                <p class="mb-0">Greet</p>
+                                <p class="mb-0">{{agent.name}}</p>
                             </blockquote>
                         </a>
                     </div>

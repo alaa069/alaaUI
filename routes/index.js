@@ -122,8 +122,8 @@ function requireLogin (req, res, next) {
     }
 };
 
-router.get("*", function(req, res){
+/*router.get("*", function(req, res){
     res.redirect('/');
-})
+})*/
 
 module.exports = router;

@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header" style="display: flex; justify-content: space-between;">
+                <div>
+                    <h5 class="title">Intents</h5>
+                </div>
+                <div>
+                    <a class="btn btn-default btn-round" href="#!/Agent/{{idAgent}}/addIntent">
+                        <i class="now-ui-icons ui-1_simple-add"></i>&nbsp&nbsp Add Intent
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12" ng-repeat="intent in intentList">
+                        <a href="#!/Agent/{{agent._id}}">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">{{intent.name}}</p>
+                            </blockquote>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" ng-include="'/dashboard/js/shared/tryChat.html'"></div>
+</div>
